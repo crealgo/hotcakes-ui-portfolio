@@ -1,0 +1,10 @@
+name: Release NPM Package
+
+on:
+  push:
+    branches: [main, next]
+
+jobs:
+  semantic-release:
+    uses: crealgo/hotcakes-release-config/.github/workflows/semantic-release.yaml@main
+    secrets: inherit

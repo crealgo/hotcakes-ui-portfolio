@@ -1,0 +1,4 @@
+{
+    "extends": "@hotcakes/tsconfig",
+		"exclude": ["lib", "node_modules"]
+}
