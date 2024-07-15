@@ -4,30 +4,33 @@
 	"type": "module",
 	"author": "Crealgo, LLC <hello.crealgo@gmail.com> (https://crealgo.com)",
 	"scripts": {
-		"build": "npx tsc --noEmit false",
+		"build": "tsc --noEmit false --rootDir src --outDir dist",
 		"prepack": "npm run build",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"description": "",
 	"exports": {
-		".": "./src/index.tsx"
+		".": "./dist/index.js",
+		"./*": "./dist/*.js"
 	},
 	"release": {
 		"extends": "@hotcakes/release-config"
 	},
 	"files": [
-		"lib/**"
+		"dist/**"
 	],
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
 	},
 	"dependencies": {
+		"clsx": "^2.1.1",
 		"styled-components": "^6.1.11",
 		"tailwindcss": "^3.4.4"
 	},
 	"peerDependencies": {
 		"eslint": "^8.57.0",
+		"next": "^14.2.5",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"typescript": "^5.5.3"
@@ -35,10 +38,7 @@
 	"devDependencies": {
 		"@hotcakes/release-config": "^1.2.0",
 		"@hotcakes/tsconfig": "^1.1.0",
-		"eslint-config-semistandard": "^17.0.0",
-		"eslint-config-standard": "^17.1.0",
-		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-n": "^15.7.0",
-		"eslint-plugin-promise": "^6.4.0"
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0"
 	}
 }
